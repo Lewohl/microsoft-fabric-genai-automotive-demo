@@ -1,3 +1,22 @@
+# This code creates a Tkinter GUI for inputting a VIN or customer ID, selecting an Excel file, and generating a service reminder mail using OpenAI's GPT-4. The generated mail is displayed in the GUI and saved in the Excel file's column T.
+# OpenAI Client: Sets up the API client.
+# Mail Generation: Uses GPT-4 to create a service reminder mail based on customer details.
+# Excel Update:
+# Prompts user to select an Excel file.
+# Finds the row matching the VIN or customer ID.
+# Generates and displays mail.
+# Saves mail content in column T of the Excel file.
+# GUI Setup:
+# Takes VIN or customer ID input.
+# Button to select Excel file and generate mail.
+# Displays mail in a scrollable text widget.
+# Main Function: Runs the Tkinter main loop.
+
+
+
+
+
+
 import os
 import pandas as pd
 from openai import OpenAI
