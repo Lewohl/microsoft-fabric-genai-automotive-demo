@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automotive Service Reminder Mail Creator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="nav-btn">Service Mail Creator</button>
+            </div>
+            <div class="nav-right">
+                <img src="/static/Accenture_logo.png" alt="Accenture Logo" class="nav-logo">
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Automotive Service Reminder Mail Creator</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="vin_or_id">Enter VIN or Customer ID:</label>
+                <input type="text" id="vin_or_id" name="vin_or_id" required>
+            </div>
+            <div class="form-group">
+                <label for="file">Upload File:</label>
+                <input type="file" id="file" name="file" accept=".xlsx" required>
+            </div>
+            <div class="form-group">
+                <label>Formality:</label>
+                <div class="button-group">
+                    <button type="button" data-formality="formell" class="formality-btn">Formell</button>
+                    <button type="button" data-formality="normal" class="formality-btn active">Normal</button>
+                    <button type="button" data-formality="informell" class="formality-btn">Informell</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Length:</label>
+                <div class="button-group">
+                    <button type="button" data-length="kurz" class="length-btn">Kurz</button>
+                    <button type="button" data-length="mittel lang" class="length-btn active">Mittel Lang</button>
+                    <button type="button" data-length="lang" class="length-btn">Lang</button>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Generate Mail Content</button>
+        </form>
+        <div id="result" class="result">
+            <h2>Generated Mail Content</h2>
+            <div class="info-container">
+                <div id="customerInfo" class="customer-info"></div>
+                <div id="sensorStatus" class="sensor-info"></div>
+                <div id="additionalFields" class="additional-fields">
+                    <div id="loyaltyField" class="field">20% off</div>
+                    <div id="insuranceField" class="field">Repair Cost Insurance</div>
+                </div>
+            </div>
+            <div class="content-wrapper">
+                <div id="loadingSpinner" class="spinner"></div>
+                <pre id="mailContent" class="mail-content"></pre>
+                <button id="outlookButton" class="outlook-btn" style="display: none;">Open in Outlook</button>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
